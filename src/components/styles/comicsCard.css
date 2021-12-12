@@ -1,0 +1,12 @@
+
+.comicsCard{
+     display: inline-flex;
+     margin: 8px;
+     border-radius: 25;
+  }
+
+  /* .comicsCard:hover: {
+    boxShadow: `0 6px 12px 0 ${Color(color)
+      .rotate(-12)
+      .darken(0.2)
+      .fade(0.5)}` */

@@ -1,0 +1,7 @@
+.root{
+    min-width: 345px;
+    max-width: 345px;
+    max-height: 330px;
+    display: "inline-grid";
+    margin: 10px
+  }

@@ -1,0 +1,41 @@
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 5% auto auto 5%;
+  grid-gap: 10px;
+  padding: 10px;
+  
+}
+
+.backwardBtn{
+  grid-column-start: 4;
+  text-align: right;
+}
+
+
+.comicsBtns-container{
+  display: grid;
+  grid-template-columns: auto 15% auto ;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.ComicsBtn{
+  background-color: #f50005;
+  color: white;
+  padding: 15px;
+    grid-column-start: 2;
+    grid-column-end: 2;   
+}
+
+ .CharacterCard-Container{
+   display: grid;
+   grid-template-columns: auto auto 25% auto;
+   padding: 10px;
+   font-size: large;
+ }
+
+ .CharacterCard{
+   grid-column-start: 2;
+   grid-column-end:2;
+ }
