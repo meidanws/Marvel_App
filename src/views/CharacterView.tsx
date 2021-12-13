@@ -14,7 +14,9 @@ const CharacterView = () => {
     const [Character, setCharacter] = React.useState<any>("");
     const [Comics, setComics] = React.useState<any>("");
     const [ShowComicsButton, setShowComics] = React.useState<boolean>(true);
+    const [Description, setDescription] = React.useState<any>("");
     const navigate = useNavigate();
+   
 
      React.useEffect(() => {    
         (async () => {  
@@ -22,12 +24,20 @@ const CharacterView = () => {
             .then((data) => {      
                 // set charecters list 
                 setCharacter(data[0]);    
-                console.log(data[0])
+               
               })
               .catch((err) => {
                console.log("Error!")
               });;})();
     }, [id]);
+
+  // use effect for Character
+  React.useEffect(() => {
+    var desc = Character.description ? Character.description : "Missing description";
+    setDescription(desc); // This is be executed when the state changes
+    }, [Character]);
+
+    
 
     const getComics = () =>{
         getComicsByCharacterId(id)
@@ -52,18 +62,21 @@ const CharacterView = () => {
              </IconButton>
              </Tooltip>
              </div>
+
              <div className="CharacterCard-Container">
                  <div className="CharacterCard">
-            <CharacterCard
+                 <CharacterCard
                   key={Character.id}
                   name={Character.name}
                   thumb={(Character.thumbnail)}
-                  description ={Character?.description } />
+                  description = {Character?.description || "meida" }  />
                 </div>
-                <h4>{Character?.description}</h4>
+                <div className="DescriptionCard">
+                <h4>{Description}</h4>
                 </div>
-                <div className="comicsBtns-container">
-                  
+              </div>
+
+               <div className="comicsBtns-container">     
                 {ShowComicsButton ?( 
                 <Button variant="contained" color="secondary" className="ComicsBtn" onClick={() => { getComics() }}>
                     Show Comics...
@@ -72,6 +85,7 @@ const CharacterView = () => {
                   Hide Comics
                </Button>}
                </div>
+
                 {Comics.length > 0 ? (
                     Comics.map((comic: any) => (
                 <ComicsCard

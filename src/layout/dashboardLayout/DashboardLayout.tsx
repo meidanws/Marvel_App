@@ -10,7 +10,7 @@ const DashboardLayout = () => {
     // if we want to save localstroge add ->  || userData != null to the if statement
 
     if(auth.authenticated ){  
-        console.log(auth.authenticated)
+        
     return (
       <div>
       <TopBar />

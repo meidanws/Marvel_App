@@ -30,7 +30,7 @@
 
  .CharacterCard-Container{
    display: grid;
-   grid-template-columns: auto auto 25% auto;
+   grid-template-columns: 25%  auto auto 25%;
    padding: 10px;
    font-size: large;
  }
@@ -38,4 +38,13 @@
  .CharacterCard{
    grid-column-start: 2;
    grid-column-end:2;
+   margin: 10px;
+ }
+
+ .DescriptionCard{
+  grid-column-start: 3;
+  grid-column-end:3;
+  max-height: 350px ;
+  text-align: justify;
+  justify-content: center;
  }

@@ -96,7 +96,7 @@ const handleClosePopout = () => {
            
           {CharactersList.length > 0 ? (
             CharactersList.filter((item: any, index: number) => index < ShowItems).map((character: any) => (
-              <div className="characters_list" onClick={() => { HandleClickCharacter(character.id)}}> 
+              <div key={character.id} className="characters_list" onClick={() => { HandleClickCharacter(character.id)}}> 
                 <CharacterCard
                   key={character.id}
                   name={character.name}
