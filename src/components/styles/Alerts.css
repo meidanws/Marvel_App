@@ -1,0 +1,37 @@
+.root{
+    width: '50%';
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    padding: 20px;
+  
+}
+
+.root p{
+    font-weight: bold;
+}
+
+.accordion{
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+.heading{
+    font-weight: bold !important;
+    font-family: sans-serif ;
+    color: rgb(156 29 210)
+}
+
+.accordionDetails{
+    display: inherit !important;
+    text-align: left;
+}
+
+.timePicker{
+    margin-top: 4px !important;
+    margin-right: 10px  !important;
+    text-align: center;
+    
+}
+
+.numericInput{
+    
+}

@@ -1,30 +1,38 @@
 {
-  "name": "marvel-app",
+  "name": "alerts-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@date-io/date-fns": "^1.3.13",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
+    "@material-ui/pickers": "^3.3.10",
     "apisauce": "^2.1.2",
     "axios": "^0.24.0",
     "color": "^4.1.0",
     "cra-template": "1.1.2",
+    "date-fns": "^2.27.0",
+    "fs-react": "0.0.4",
     "material-ui-search-bar": "^1.0.0",
+    "mdb-react-ui-kit": "^2.2.0",
+    "mdbreact": "^5.2.0",
     "mui-treasury": "^0.1.5-alpha.3",
     "react": "^17.0.2",
+    "react-datepicker": "^4.5.0",
     "react-dom": "^17.0.2",
     "react-google-font-loader": "^1.1.0",
+    "react-numeric-input": "^2.2.3",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "write-json-file": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
- 
   },
   "eslintConfig": {
     "extends": [
@@ -32,7 +40,6 @@
       "react-app/jest"
     ]
   },
-  
   "browserslist": {
     "production": [
       ">0.2%",
@@ -48,6 +55,8 @@
   "devDependencies": {
     "@types/color": "^3.0.2",
     "@types/react-dom": "^17.0.11",
-    "gh-pages": "^3.2.3"
+    "@types/react-numeric-input": "^2.2.4",
+    "gh-pages": "^3.2.3",
+    "json-loader": "^0.5.7"
   }
 }

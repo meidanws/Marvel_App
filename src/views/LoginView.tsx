@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useEffect, useReducer } from 'react';
 import { useNavigate  } from "react-router-dom";
 import authentication from "../utils/Authentication";
+import User from '../data/User';
 
 // material-ui
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
@@ -11,6 +12,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import CardHeader from '@material-ui/core/CardHeader';
 import Button from '@material-ui/core/Button';
+
+// fake data 
+import userData from '../data/userData.json'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     loginBtn: {
       marginTop: theme.spacing(2),
-      background:'#f0131e',
+      background:'#d51c58',
       flexGrow: 1
     },
     header: {
@@ -102,7 +106,7 @@ const Login = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useEffect(() => {  
     if (state.username.trim() && state.password.trim()) {
      dispatch({
        type: 'setIsButtonDisabled',
@@ -117,17 +121,25 @@ const Login = () => {
   }, [state.username, state.password]);
 
   const handleLogin = () => {
-    if (state.username === 'admin' && state.password === 'admin') {
+    userData.map(function(user){
+      if(state.username === user.userName && state.password === user.password){
       dispatch({
         type: 'loginSuccess',
         payload: 'Login Successfully'
       });
-
+      
       // login user
       authentication.login(() =>{
-        // store the user in localStorage
-       localStorage.setItem('user', state.username);
-       navigate('app/dashboard')
+      // store the user in localStorage
+       localStorage.setItem('user', user.userId.toString());
+       // set local user class
+       User.userName = user.userName;
+       User.userId = user.userId;
+       User.permissions = user.permissions;
+       User.password = user.password;
+       User.email = user.email;
+
+       navigate('app/alerts')
      })
      
     } else {
@@ -136,6 +148,8 @@ const Login = () => {
         payload: 'Incorrect username or password'
       });
     }
+    
+  })
   };
 
   const handleKeyPress = (event: React.KeyboardEvent) => {

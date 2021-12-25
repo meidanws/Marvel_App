@@ -1,0 +1,20 @@
+[
+    {
+      "userId": 1,
+      "userName": "admin",
+      "basicSettings":{
+          "dailyHealth":true,
+           "time": "12:00:00",
+           "monitorTime": 10
+      },
+      "advancedSettings":{
+        "weeklyDiskSpace":false,
+         "date": "2021-12-25",
+         "time": "18:00:00",
+         "GB":true,
+         "GBValue":250,
+         "precentege":false,
+         "precentegeValue": 100
+    }
+    }
+  ]

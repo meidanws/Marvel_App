@@ -1,0 +1,8 @@
+.buttons-container{
+    display: flex;
+    padding: 10px;
+}
+
+.buttons-container button{
+    margin: 10px;
+}

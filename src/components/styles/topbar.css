@@ -1,0 +1,8 @@
+.TopBar{
+background: rgb(214,33,79);
+background: -moz-linear-gradient(7deg, rgba(214,33,79,1) 9%, rgba(154,28,212,1) 62%, rgba(238,58,60,1) 96%);
+background: -webkit-linear-gradient(7deg, rgba(214,33,79,1) 9%, rgba(154,28,212,1) 62%, rgba(238,58,60,1) 96%);
+background: linear-gradient(7deg, rgba(214,33,79,1) 9%, rgba(154,28,212,1) 62%, rgba(238,58,60,1) 96%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d6214f",endColorstr="#ee3a3c",GradientType=1);
+}
+

@@ -1,0 +1,23 @@
+[
+    {
+      "userId": 1,
+      "userName": "admin",
+      "password": "admin",
+      "email": "admin@gmail.com",
+      "permissions":[1,2]
+    },
+   {
+      "userId": 2,
+      "userName": "user",
+      "password": "user",
+      "email": "user@gmail.com",
+      "permissions":[2]
+    },
+    {
+      "userId": 3,
+      "userName": "user2",
+      "password": "user2",
+      "email": "user2@gmail.com",
+      "permissions":[1]
+    }
+  ]

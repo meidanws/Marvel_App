@@ -18,12 +18,13 @@ import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
 import InputIcon from '@material-ui/icons/Input';
 import { Tooltip } from '@material-ui/core';
+import '../styles/topbar.css'
+import User from '../../data/User';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
-     
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     toolBar: {
-        backgroundColor: "#F0131E",
+        backgroundColor: "rgb(214,33,79);",
     },
     white:{
         backgroundColor:'white',
@@ -71,9 +72,12 @@ export default function TopBar() {
   }
   const handleLogout = () => {
     // logout user
-    authentication.logout(() =>{
-  
-     }) 
+    authentication.logout(() =>{}) 
+     User.logout(() =>{
+     
+     });
+     // clean local storage
+     localStorage.removeItem("user");
      navigate('/')
 }
 
@@ -81,12 +85,12 @@ export default function TopBar() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar className={classes.toolBar}>
+        <Toolbar className="TopBar">
           <Avatar className={classes.white} > 
-          <img src={'../images/marvelLogo.png'} alt="A"  width= "88px" />
+          <img src={'../images/semperisLogo.png'} alt="A"  width= "40px" />
           </Avatar>
           <Typography variant="h6" className={classes.title}>
-            Marvel App
+            Semperis App
           </Typography>
           <Tooltip  title="Logout" >
           <IconButton color="inherit" onClick={handleLogoutButton}>  
@@ -126,12 +130,12 @@ export default function TopBar() {
     return (
         <div className={classes.root}>
         <AppBar position="static">
-          <Toolbar  className={classes.toolBar}>
+          <Toolbar  className="TopBar">
           <Avatar className={classes.white} > 
-          <img src={'../images/marvelLogo.png'} alt="A"  width= "88px" />
+          <img src={'../images/semperisLogo.png'} alt="A"  width= "40px" />
           </Avatar>
             <Typography variant="h6" className={classes.title}>
-              Welcome to Marvel App
+              Welcome to Alerts App
             </Typography> 
           </Toolbar>
         </AppBar>
